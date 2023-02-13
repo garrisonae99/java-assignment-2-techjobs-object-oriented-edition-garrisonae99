@@ -29,6 +29,53 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+    @Override
+    public String toString() {
+        String stringReturn = "\nID: " + this.getId() +
+                "\nName: " + this.getName() +
+                "\nEmployer: " + this.getEmployer().getValue() +
+                "\nLocation: " + this.getLocation().getValue() +
+                "\nPosition Type: " + this.getPositionType().getValue() +
+                "\nCore Competency: " + this.getCoreCompetency().getValue() + "\n";
+        if (this.name == "") {
+            return "\nID: " + this.getId() +
+                    "\nName: Data not available" +
+                    "\nEmployer: " + this.getEmployer().getValue() +
+                    "\nLocation: " + this.getLocation().getValue() +
+                    "\nPosition Type: " + this.getPositionType().getValue() +
+                    "\nCore Competency: " + this.getCoreCompetency().getValue() + "\n";
+        }else if (this.employer.getValue() == null) {
+            return "\nID: " + this.getId() +
+                    "\nName: " + this.getName() +
+                    "\nEmployer: Data not available" +
+                    "\nLocation: " + this.getLocation().getValue() +
+                    "\nPosition Type: " + this.getPositionType().getValue() +
+                    "\nCore Competency: " + this.getCoreCompetency().getValue() + "\n";
+        }else if (this.location.getValue() == null) {
+            return "\nID: " + this.getId() +
+                    "\nName: " + this.getName() +
+                    "\nEmployer: " + this.getEmployer().getValue() +
+                    "\nLocation: Data not available" +
+                    "\nPosition Type: " + this.getPositionType().getValue() +
+                    "\nCore Competency: " + this.getCoreCompetency().getValue() + "\n";
+        }else if (this.positionType.getValue() == null) {
+            return "\nID: " + this.getId() +
+                    "\nName: " + this.getName() +
+                    "\nEmployer: " + this.getEmployer().getValue() +
+                    "\nLocation: " + this.getLocation().getValue() +
+                    "\nPosition Type: Data not available" +
+                    "\nCore Competency: " + this.getCoreCompetency().getValue() + "\n";
+        }else if (this.coreCompetency.getValue() == null) {
+            return "\nID: " + this.getId() +
+                    "\nName: " + this.getName() +
+                    "\nEmployer: " + this.getEmployer().getValue() +
+                    "\nLocation: " + this.getLocation().getValue() +
+                    "\nPosition Type: " + this.getPositionType().getValue() +
+                    "\nCore Competency: Data not available\n";
+        }else {
+            return stringReturn;
+        }
+    }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
